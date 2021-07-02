@@ -64,6 +64,12 @@ flutter:
     - images/store_location.png
     - images/success_icon.png
     - images/username_icon.png
+    - images/shoes_basketball_39.png
+    - images/shoes_hiking_55.png
+    - images/shoes_running_6.png
+    - images/shoes_training_31.png
+    - images/headset_icon.png
+    - images/logo_online.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

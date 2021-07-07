@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shamo_tryit/pages/Widget/chat_tile.dart';
+import 'package:shamo_tryit/Widget/chat_tile.dart';
 import 'package:shamo_tryit/theme.dart';
 
 class ChatPage extends StatelessWidget {

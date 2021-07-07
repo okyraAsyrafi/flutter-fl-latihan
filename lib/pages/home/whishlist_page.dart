@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shamo_tryit/pages/Widget/whistlist_card.dart';
+import 'package:shamo_tryit/Widget/whistlist_card.dart';
 import 'package:shamo_tryit/theme.dart';
 
 class WhishlistPage extends StatelessWidget {

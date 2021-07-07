@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shamo_tryit/pages/Widget/chat_bubble.dart';
+import 'package:shamo_tryit/Widget/chat_bubble.dart';
 import 'package:shamo_tryit/theme.dart';
 
 class DetailChatPage extends StatelessWidget {

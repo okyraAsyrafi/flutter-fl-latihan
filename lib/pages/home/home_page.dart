@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shamo_tryit/pages/Widget/product_card.dart';
-import 'package:shamo_tryit/pages/Widget/product_tile.dart';
+import 'package:shamo_tryit/Widget/product_card.dart';
+import 'package:shamo_tryit/Widget/product_tile.dart';
 import 'package:shamo_tryit/theme.dart';
 
 class HomePage extends StatelessWidget {

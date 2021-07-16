@@ -73,6 +73,7 @@ flutter:
     - images/logo_online.png
     - images/send_button.png
     - images/x_button.png
+    - images/button_love.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

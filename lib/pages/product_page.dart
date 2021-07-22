@@ -16,6 +16,19 @@ class _ProductPageState extends State<ProductPage> {
     'images/shoes_hiking_55.png'
   ];
 
+  List similiarShoes = [
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+    'images/shoes_training_31.png',
+  ];
+
   int currentIndex = 0;
 
   @override
@@ -90,7 +103,23 @@ class _ProductPageState extends State<ProductPage> {
       );
     }
 
+    Widget similiarShoesCard(String imageUrl) {
+      return Container(
+        width: 54,
+        height: 54,
+        margin: EdgeInsets.only(right: 16),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(imageUrl),
+          ),
+          borderRadius: BorderRadius.circular(6),
+        ),
+      );
+    }
+
     Widget content() {
+      int index = -1;
+
       return Container(
         width: double.infinity,
         margin: EdgeInsets.only(top: 17),
@@ -103,6 +132,7 @@ class _ProductPageState extends State<ProductPage> {
         ),
         child: Column(
           children: <Widget>[
+            //Note: header
             Container(
               margin: EdgeInsets.fromLTRB(
                   marginDefault, marginDefault, marginDefault, 0),
@@ -132,6 +162,7 @@ class _ProductPageState extends State<ProductPage> {
                 ],
               ),
             ),
+            //Note: price starts
             Container(
               width: double.infinity,
               margin: EdgeInsets.only(
@@ -161,6 +192,7 @@ class _ProductPageState extends State<ProductPage> {
                 ],
               ),
             ),
+            //NOTE: description
             Container(
               width: double.infinity,
               margin: EdgeInsets.all(marginDefault),
@@ -175,22 +207,91 @@ class _ProductPageState extends State<ProductPage> {
                   Text(
                     'Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.',
                     style: subtittleTextStyle.copyWith(fontWeight: light),
+                    textAlign: TextAlign.justify,
                   )
                 ],
               ),
-            )
+            ),
+            //NOTE: similiar shoes
+            Container(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(left: marginDefault),
+                    child: Text(
+                      'Fimiliar Shoes',
+                      style: primaryTextStyle.copyWith(fontWeight: medium),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: similiarShoes.map((images) {
+                        index++;
+                        return Padding(
+                          padding: EdgeInsets.only(
+                            left: index == 0 ? marginDefault : 0,
+                          ),
+                          child: similiarShoesCard(images),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //NOTE: button chat
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.all(marginDefault),
+              child: Row(
+                children: <Widget>[
+                  Image.asset(
+                    'images/button_chat.png',
+                    width: 45,
+                    height: 54,
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Container(
+                        height: 54,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            backgroundColor: primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Text(
+                            'Add to Cart',
+                            style: primaryTextStyle.copyWith(
+                              fontSize: 16,
+                              fontWeight: semiBold,
+                            ),
+                          ),
+                        )),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       );
     }
 
     return Scaffold(
-        backgroundColor: bgColor6,
-        body: ListView(
-          children: [
-            header(),
-            content(),
-          ],
-        ));
+      backgroundColor: bgColor6,
+      body: ListView(
+        children: [
+          header(),
+          content(),
+        ],
+      ),
+    );
   }
 }

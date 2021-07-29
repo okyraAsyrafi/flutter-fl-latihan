@@ -33,3 +33,4 @@ TextStyle titleBlackTextStyle = GoogleFonts.poppins(color: titleBlackColor);
 TextStyle subtittleTextStyle = GoogleFonts.poppins(color: subtittleTextColor);
 TextStyle purpleTextStyle = GoogleFonts.poppins(color: primaryColor);
 TextStyle buyTextStyle = GoogleFonts.poppins(color: bgColor7);
+TextStyle alertTextStyle = GoogleFonts.poppins(color: alertColor);

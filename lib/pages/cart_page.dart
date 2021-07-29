@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shamo_tryit/Widget/cart_card.dart';
 import 'package:shamo_tryit/theme.dart';
 
 class CartPage extends StatelessWidget {
@@ -55,10 +56,75 @@ class CartPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        padding: EdgeInsets.symmetric(horizontal: marginDefault),
+        children: [
+          CartCard(),
+        ],
+      );
+    }
+
+    Widget customNavBar() {
+      return Container(
+        height: 180,
+        margin: EdgeInsets.symmetric(horizontal: marginDefault),
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Subtotal',
+                  style: primaryTextStyle,
+                ),
+                Text(
+                  '\$287,96',
+                  style: priceTextStyle.copyWith(
+                      fontSize: 16, fontWeight: semiBold),
+                ),
+              ],
+            ),
+            SizedBox(height: 30),
+            Divider(thickness: 0.3, color: subtittleTextColor),
+            SizedBox(height: 30),
+            Container(
+              child: TextButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Continue to Checkout',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: primaryTextColor,
+                    )
+                  ],
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: primaryColor,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: bgColor3,
       appBar: header(),
-      body: emptyCart(),
+      body: content(),
+      bottomNavigationBar: customNavBar(),
     );
   }
 }

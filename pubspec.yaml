@@ -76,6 +76,8 @@ flutter:
     - images/button_love.png
     - images/button_chat.png
     - images/icon_remove.png
+    - images/line.png
+    - images/icon_location.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

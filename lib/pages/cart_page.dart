@@ -90,7 +90,9 @@ class CartPage extends StatelessWidget {
             SizedBox(height: 30),
             Container(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/checkout');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
